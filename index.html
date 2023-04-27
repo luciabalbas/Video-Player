@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 3</title>
+    <meta name="author" content="Lucia Balbas">
+    <meta name="description" content="Practica de API curso Full-Stack de Samsung DesArrolladoras">
+    <!-- Import style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrap">
+        <h2>Suba su video</h2>
+        <!-- Input file from local computer -->
+        <input type="file" name="video" id="files">
+        <!-- Error message -->
+        <div id="message"></div>
+        <!-- Loading animation -->
+        <div id="load"></div>
+        <!-- Player -->
+        <div id="player">
+            <video id="video" width="90%" controls>
+                <p>Navegador no soportado</p>
+            </video>
+            <!-- Player Bottons -->
+            <div class="video-buttons">
+                <button onclick="document.getElementById('video').play();">Reproducir</button>
+                <button onclick="document.getElementById('video').pause();">Pausa</button>
+                <button onclick="document.getElementById('video').volume +=0.1;">Subir Volumen</button>
+                <button onclick="document.getElementById('video').volume -=0.1;">Bajar Volumen</button>
+            </div>
+        </div>
+    </div>
+    <!-- Import scripts -->
+    <script src="index.js"></script>
+</body>
+</html>
