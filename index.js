@@ -1,4 +1,4 @@
-// Check if the APIs works
+// Check if the API FILE works
 if (window.File && window.FileReader && window.FileList) {
     console.log("Las APIs son soportadas");
 }
@@ -8,11 +8,8 @@ else {
 
 // Listener of files
 function start() {
-    
     player = document.getElementById("player");
-
     files = document.getElementById("files");    
-    
     files.addEventListener("change", verify, false);
 }
 
@@ -22,7 +19,6 @@ function verify(e) {
     let filePath = files.value;
     let allowedExtension = /(\.mp4)$/i;
     let error = document.getElementById("message");
-    // let video = document.getElementById("video");
     let animation = document.createElement("div");
     let load = document.getElementById("load");
     
@@ -30,7 +26,7 @@ function verify(e) {
     if(!allowedExtension.exec(filePath)) {
         alert("Tipo de archivo inválido. Suba un mp4");
         files.value = '';
-        error.innerHTML = "Extensión de archivo no válido. Intente un .mp4";
+        error.innerHTML = "Extensión de archivo no válido. Intente un archivo .mp4";
         player.setAttribute("style", "display:none")
         return false;
     }
@@ -48,7 +44,7 @@ function verify(e) {
         }, 5000);
     }
     
-    // Read the video - just the first
+    // Read the video - just the first video
     let eFiles = e.target.files;
     let myFile = eFiles[0];
     let reader = new FileReader();
@@ -56,6 +52,7 @@ function verify(e) {
     reader.addEventListener("load", show, false);
 }
 
+// Creating the url 
 function show(e) {
     let result = e.target.result;
     // Buffer to a blob
