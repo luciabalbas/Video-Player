@@ -6,17 +6,18 @@
 * {
     margin: 0;
     font: 600 1em 'Open Sans', sans-serif;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 /* Body */
 body {
-    height: 100vh;
+    min-height: 100vh;
+    padding: 3em 0;
     background: linear-gradient(#38A2DF, #561139) no-repeat fixed;
     display: flex;
-    align-items: center;
+    flex-flow: column wrap;
     justify-content: center;
-    padding: 3em 0;
+    align-items: center;
 }
 
 /* Wrap */
@@ -109,7 +110,7 @@ button:hover {
     }
     #wrap {
         width: 100%;
-        margin-top: 40px;
+        margin: 0;
     }
     
 }
